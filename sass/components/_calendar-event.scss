@@ -1,0 +1,88 @@
+.c-calendar-event {
+    padding: 20px 20px 20px 100px;
+    height: 150px;
+    border: 1px solid #ddd;
+    background-color: white;
+    position: relative;
+
+    &:before {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: $brand-gray-light;
+        font-family: 'FontAwesome';
+        text-align: center;
+        font-size: 2.5em;
+        width: 60px;
+    }
+
+    &.c--meeting{
+        &:before {
+            content: '\f0c0';
+        }
+    }
+    &.c--appointment{
+        &:before {
+            content: '\f017';
+        }
+    }
+    &.c--task{
+        &:before {
+            content: '\f0ae';
+        }
+    }
+}
+.c-calendar-event__action-group{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.c-calendar-event__action {
+    width: 25px;
+    height: 25px;
+    color: $brand-gray-light;
+    &:before {
+        display: block;
+        float: left;
+        top: 20px;
+        margin-right: 10px;
+        left: 20px;
+        font-family: 'FontAwesome';
+        text-align: center;
+        font-size: 1.4em;
+        width: 20px;
+    }
+
+
+    &.c--edit {
+        &:hover {
+            color: $ui-blue;
+        }
+        &:before{
+            content: '\f044';
+        }
+
+
+    }
+    &.c--delete {
+        &:hover {
+            color: $ui-red;
+        }
+        &:before{
+            content: '\f1f8';
+        }
+    }
+
+}
+
+.c-calendar-event__title {
+    font-size: 1.5em;
+}
+.c-calendar-event__time {
+    font-size: 1.5em;
+}
+.c-calendar-event__note {
+    font-size: 0.9em;
+    padding-top: 15px;
+}

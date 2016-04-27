@@ -6,9 +6,9 @@ define(
     function(app) {
         'use strict';
         app.factory('calendarEventFactory', calendarEventFactory);
-        calendarEventFactory.$inject = [];
+        calendarEventFactory.$inject = ['$rootScope'];
 
-        function calendarEventFactory() {
+        function calendarEventFactory($rootScope) {
             var events = {};
             return {
                 saveEvent: _saveEvent,
@@ -22,6 +22,7 @@ define(
                     events[date] = [];
                 }
                 events[date].push(event);
+                $rootScope.$broadcast('event-updated');
             }
 
             function _getEvents(date) {
@@ -29,11 +30,19 @@ define(
             }
 
             function _deleteEvent(date, eventId){
-
+                events[date] = _.filter(events[date], function(e){
+                    return e.id !== eventId;
+                });
+                $rootScope.$broadcast('event-updated');
             }
 
             function _updateEvent(date, event){
-
+                angular.forEach(events[date], function(e){
+                    if(e.id === event.id){
+                        e = event;
+                    }
+                });
+                $rootScope.$broadcast('event-updated');
             }
 
 

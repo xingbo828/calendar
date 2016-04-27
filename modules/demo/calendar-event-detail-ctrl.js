@@ -10,7 +10,12 @@ define(
     calendarEventDetailController.$inject = ['$scope', '$stateParams', 'calendarEventFactory', 'ngDialog'];
 
     function calendarEventDetailController($scope, $stateParams, calendarEventFactory, ngDialog){
-        $scope.events = calendarEventFactory.getEvents($stateParams.date);
+        _loadEvents();
         $scope.seletedDate = $stateParams.date;
+        $scope.$on('event-updated', _loadEvents);
+
+        function _loadEvents(){
+            $scope.events = calendarEventFactory.getEvents($stateParams.date);
+        }
     }
 });

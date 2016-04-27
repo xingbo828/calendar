@@ -19,8 +19,8 @@
                     ng-click="pickDate(day)"
                     ng-repeat="day in week.days">
                     <span class="c-calendar-body__body-cell-date">{{day.day}}</span>
-                    <span class="c-calendar-body__body-cell-event-counter" ng-if="getNumOfEvents() > 0">
-                        {{getNumOfEvents()}}
+                    <span class="c-calendar-body__body-cell-event-counter" ng-if="getNumOfEvents(day) > 0">
+                        {{getNumOfEvents(day)}}
                     </span>
                 </li>
             </ul>

@@ -8,20 +8,40 @@
     <!-- Modal: Content -->
     <form name="newEvent" novalidate ng-submit="confirm()">
         <div class="modal__content">
-            <label for="eventTitle">Event title</label>
+            <label for="eventTitle">Event title *</label>
             <input
                 autofocus
                 type="text"
                 name="eventTitle"
-                ng-model="newEvent.title"
+                ng-model="event.title"
+                ng-class="{ 'has-error': newEvent.eventTitle.$touched && newEvent.eventTitle.$invalid }"
                 required
             >
+            <div ng-show="newEvent.eventTitle.$touched && newEvent.eventTitle.$invalid" ng-messages="newEvent.eventTitle.$error" role="alert" class="field-validation">
+                <p ng-message="required">Event title is required</p>
+            </div>
 
+            <label for="eventType">Event type *</label>
+            <p class="c--no-margin"><input type="radio" ng-model="event.type" value="Meeting"> Meeting</p>
+            <p class="c--no-margin"><input type="radio" ng-model="event.type" value="Appointment"> Appointment</p>
+            <p class="c--no-margin"><input type="radio" ng-model="event.type" value="Task"> Task</p>
+
+            <label for="eventType">Note</label>
+            <textarea ng-model="event.note"></textarea>
+
+            <div ng-if="event.type !== 'Task'">
+                <label for="eventType">Time</label>
+                <div class="c--no-margin">
+                    <input type="time" ng-model="event.from"> to <input type="time" ng-model="event.to">
+                </div>
+            </div>
         </div>
         <!-- / End Modal: Content -->
         <!-- Modal: Footer -->
         <div class="modal__footer">
-            <button type="submit" class="c-button c--blue c--full-width">Create</button>
+            <button type="submit"
+            ng-class="{'c--is-disabled': newEvent.$invalid}"
+            class="c-button c--blue c--full-width">Create</button>
         </div>
     </form>
     <!-- / End Modal: Footer -->

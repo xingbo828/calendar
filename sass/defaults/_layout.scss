@@ -11,9 +11,13 @@ html { }
 
 body {
 	color: #595859;
+	font-family: arial;
 	-webkit-font-smoothing: antialiased;
 	font-size: 16px;
 	margin: 0;
 	padding: 20px;
 	background: #F5F6F7;
+}
+.c--no-margin {
+	margin: 0;
 }

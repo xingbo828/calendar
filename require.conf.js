@@ -6,6 +6,9 @@ require.config({
         name: 'modules/components/calendar',
         main: 'loader'
     }, {
+        name: 'modules/components/weather-card',
+        main: 'loader'
+    }, {
         name: 'modules/demo',
         main: 'loader'
     }],

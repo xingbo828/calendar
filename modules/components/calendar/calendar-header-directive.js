@@ -13,18 +13,21 @@ define(['modules/components/calendar/module', 'moment'], function(app, moment) {
                 if ($scope.mode === 'detail') {
                     var clone = $scope.seletedDate;
                     $scope.selectedDate = moment(clone);
+
+                    $scope.addEvent = function() {
+                        var scope = $scope.$new();
+                        scope.date = clone;
+                        var dialogConfig = {
+                            template: 'modules/components/calendar/add-new-event-dialog.html',
+                            controller: 'newEventController',
+                            closeByDocument: false,
+                            scope: scope
+                        };
+                        ngDialog.open(dialogConfig);
+                    };
                 }
 
-                $scope.addEvent = function() {
-                    var scope = $scope.$new();
-                    var dialogConfig = {
-                        template: 'modules/components/calendar/add-new-event-dialog.html',
-                        controller: 'newEventController',
-                        closeByDocument: false,
-                        scope: scope
-                    };
-                    ngDialog.open(dialogConfig);
-                };
+
             }
         };
     }

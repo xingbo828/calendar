@@ -13,7 +13,6 @@ define(
         $scope.postDatePick = postDatePick;
 
         function postDatePick(day){
-            console.log(day);
             $state.go('calendarEventDetail', {
                 date: day.date
             });

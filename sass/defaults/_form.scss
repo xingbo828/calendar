@@ -1,0 +1,81 @@
+// Text Area
+// ----------
+
+textarea
+{
+	border: 1px solid #e3e3e3;
+	max-width: 100%;
+	width: 100%;
+	padding: 0 15px;
+	margin: 10px 0 $gutter-width-small;
+	font-family: aria;
+	border: 1px solid #e3e3e3;
+	box-sizing: border-box;
+	border-radius: 2px;
+	background: white;
+	font-size: .875rem;
+	min-height: 136px;
+	color: inherit;
+	@include transition(.3s);
+
+	&:hover {
+		border-color: #d4d4d4;
+	}
+
+	&:focus {
+		border-color: $ui-green;
+		outline: none;
+	}
+}
+
+
+
+// Select
+// ---------
+//
+// 1. Down chevron icon.
+
+select {
+	height: 45px;
+	padding: 10px 40px 10px 15px;
+	margin: 10px 0 $gutter-width-small;
+	width: 100%;
+	border: 1px solid #e3e3e3;
+	box-sizing: border-box;
+	border-radius: 2px;
+	background: white right 10px center no-repeat url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA5NjAgNTYwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA5NjAgNTYwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBmaWxsPSIjRDRENEQ0IiBkPSJNNzA3LjEsMTgwLjVsLTIzLjQtMjMuNGMtOC4xLTcuNy0xNy42LTExLjUtMjguNC0xMS41Yy0xMS4xLDAtMjAuMywzLjgtMjgsMTEuNUw0NzUuNCwzMDlMMzIzLjUsMTU3LjFjLTcuNy03LjctMTcuMy0xMS41LTI4LTExLjVzLTIwLjMsMy44LTI4LjQsMTEuNWwtMjMsMjMuNGMtOC4xLDguMS0xMS45LDE3LjMtMTEuOSwyOC40YzAsMTEuMSwzLjgsMjAuNywxMS45LDI4bDIwMy4zLDIwMy4zYzcuNyw4LjEsMTYuOSwxMS45LDI4LDExLjlzMjAuNy0zLjgsMjguNC0xMS45bDIwMy4zLTIwMy4zYzcuNy03LjcsMTEuNS0xNy4zLDExLjUtMjhDNzE4LjYsMTk4LjEsNzE0LjcsMTg4LjUsNzA3LjEsMTgwLjV6Ii8+PC9zdmc+);
+	background-size: 1.25rem;
+	font-size: .875rem;
+	color: inherit;
+	text-indent: 0;
+	@include transition(.3s);
+	@include appearance(none);
+
+	&:hover {
+		border-color: #d4d4d4;
+	}
+
+	&:focus {
+		border-color: $ui-green;
+		outline: none;
+	}
+
+	// Modifiers
+
+	&.has-error {
+		border-color: $ui-red;
+	}
+}
+
+
+// Label
+// -------
+
+label, .c-label {
+    margin-top: 10px;
+	font-family: Arial;
+	display: block;
+	color: #6D6D6D;
+	font-size: 1rem;
+	line-height: 1rem;
+}

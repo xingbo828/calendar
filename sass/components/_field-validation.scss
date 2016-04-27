@@ -1,0 +1,36 @@
+// Component
+
+
+// Field Validation
+// ----------
+
+.field-validation {
+	float: right;
+    line-height: 1rem;
+    color: white;
+    background: #f36;
+    padding: 3px 10px;
+    font-weight: 800;
+    // font-family: 'tromanregular';
+    margin: -21px 0 10px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    @include animation(animateValadationIn .3s linear);
+
+	p {
+		margin: 0;
+	    padding: 0;
+	    font-size: .65rem;
+	}
+}
+
+// Animations
+// ----------
+
+@include keyframes(animateValadationIn) {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}

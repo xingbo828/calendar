@@ -7,9 +7,22 @@ define(
     'use strict';
 
     app.controller('newEventController', newEventController);
-    newEventController.$inject = ['$scope'];
+    newEventController.$inject = ['$scope', 'calendarEventFactory'];
 
-    function newEventController($scope){
-        
+    function newEventController($scope, calendarEventFactory){
+        $scope.event = {
+            title: '',
+            type: 'Meeting',
+            from: null,
+            to: null
+        };
+
+        $scope.confirm = function(){
+            if(!$scope.newEvent.$invalid){
+                $scope.event.id = _.uniqueId();
+                calendarEventFactory.saveEvent($scope.date, $scope.event);
+                $scope.closeThisDialog();
+            }
+        };
     }
 });

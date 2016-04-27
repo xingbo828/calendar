@@ -1,6 +1,11 @@
-<div>
+<div class="t-event-detail">
     <calendar-header view="detail"></calendar-header>
-    <div>
-        <calendar-event event="event" ng-repeat="event in events"></calendar-event>
+    <div class="c-event-deail-container">
+        <div class="c-events">
+            <calendar-event event="event" ng-repeat="event in events"></calendar-event>
+        </div>
+        <div class="c-weather-card">
+            <weather-card></weather-card>
+        </div>
     </div>
 </div>

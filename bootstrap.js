@@ -7,7 +7,8 @@ require([
     'ng-dialog',
     'templates-main',
     'modules/demo',
-    'modules/components/calendar'
+    'modules/components/calendar',
+    'modules/components/weather-card'
 ], function(_, moment) {
 
     'use strict';
@@ -20,7 +21,8 @@ require([
 
         //Custome modules
         'DEMO',
-        'COMPONENTS.CALENDAR'
+        'COMPONENTS.CALENDAR',
+        'COMPONENTS.WEATHERCARD'
     ]);
 
     app.config(['$urlRouterProvider', function($urlRouterProvider) {
