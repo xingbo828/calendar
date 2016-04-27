@@ -1,0 +1,29 @@
+<!-- Modal -->
+<div class="modal">
+    <!-- Modal: Header -->
+    <div class="modal__header">
+        <h3>New Event</h3>
+    </div>
+    <!-- / Modal: Header -->
+    <!-- Modal: Content -->
+    <form name="newEvent" novalidate ng-submit="confirm()">
+        <div class="modal__content">
+            <label for="eventTitle">Event title</label>
+            <input
+                autofocus
+                type="text"
+                name="eventTitle"
+                ng-model="newEvent.title"
+                required
+            >
+
+        </div>
+        <!-- / End Modal: Content -->
+        <!-- Modal: Footer -->
+        <div class="modal__footer">
+            <button type="submit" class="c-button c--blue c--full-width">Create</button>
+        </div>
+    </form>
+    <!-- / End Modal: Footer -->
+</div>
+<!-- / End Modal -->

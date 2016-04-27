@@ -1,0 +1,64 @@
+// Component
+
+// Calendar Body
+// ---------
+.c-calendar-body {
+    width: 100%;
+    margin-top: 20px;
+}
+.c-calendar-body__heading {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.c-calendar-body__heading-cell {
+    flex: 1;
+    height: 20px;
+    font-size: 1.0em;
+    list-style: none;
+    text-transform: uppercase;
+}
+.c-calendar-body__body {
+    padding: 0;
+    margin: 0;
+}
+.c-calendar-body__body-row-container {
+    list-style: none;
+}
+.c-calendar-body__body-row {
+    display: flex;
+    padding: 0;
+}
+.c-calendar-body__body-cell {
+    flex: 1;
+    height: 120px;
+    list-style: none;
+    position: relative;
+    border: 1px solid $brand-gray-light;
+    &:hover {
+        background-color: $ui-dark-blue !important;
+        cursor: pointer !important;
+        color: white !important;
+    }
+
+    &.c--disabled {
+        background-color: #ddd;
+        color: $brand-dark-gray;
+    }
+
+    &.c--today {
+        background-color: $ui-green;
+    }
+}
+.c-calendar-body__body-cell-date {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.c-calendar-body__body-cell-event-counter {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    font-size: 2.5em;
+
+}

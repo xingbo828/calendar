@@ -1,0 +1,29 @@
+<div class="c-calendar-body">
+    <ul class="c-calendar-body__heading">
+        <li class="c-calendar-body__heading-cell">Sunday</li>
+        <li class="c-calendar-body__heading-cell">Monday</li>
+        <li class="c-calendar-body__heading-cell">Tuesday</li>
+        <li class="c-calendar-body__heading-cell">Wednesday</li>
+        <li class="c-calendar-body__heading-cell">Thursday</li>
+        <li class="c-calendar-body__heading-cell">Friday</li>
+        <li class="c-calendar-body__heading-cell">Saturday</li>
+    </ul>
+    <ul class="c-calendar-body__body">
+        <li class="c-calendar-body__body-row-container" ng-repeat="week in weeks">
+            <ul class="c-calendar-body__body-row">
+                <li class="c-calendar-body__body-cell"
+                    ng-class="{
+                        'c--disabled': day.name==='Sunday' || day.name==='Saturday',
+                        'c--today': day.isToday
+                    }"
+                    ng-click="pickDate(day)"
+                    ng-repeat="day in week.days">
+                    <span class="c-calendar-body__body-cell-date">{{day.day}}</span>
+                    <span class="c-calendar-body__body-cell-event-counter" ng-if="getNumOfEvents() > 0">
+                        {{getNumOfEvents()}}
+                    </span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

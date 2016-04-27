@@ -1,0 +1,77 @@
+// Component
+
+// Calendar Header
+// ---------
+.c-calendar-header {
+    display: block;
+    height: 50px;
+    width: 100%;
+}
+
+.c-calendar-header__month-switcher {
+    display: block;
+    float: left;
+    padding: 5px 15px 5px 5px;
+}
+.c-calendar-header__date {
+    display: block;
+    float: left;
+    font-size: 2.2em;
+    font-weight: bold;
+    color: $ui-blue;
+    line-height: 50px;
+}
+
+.c-calendar-header__month-switcher-action {
+    width: 50px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: $brand-off-white;
+    &:hover {
+        background-color: $brand-gray-light;
+    }
+    &:before {
+        display: block;
+        color: $ui-dark-blue;
+        font-family: 'FontAwesome';
+        float: left;
+        text-align: center;
+        line-height: 30px;
+        font-size: 1.7em;
+    }
+
+    &.c--previous {
+        &:before{
+            padding-left: 5px;
+            content: '\f060';
+        }
+
+    }
+    &.c--next {
+        &:before{
+            padding-left: 10px;
+            content: '\f061';
+        }
+    }
+}
+.c-calendar-header__new-event-action {
+    width: 50px;
+    height: 35px;
+    cursor: pointer;
+    margin: 8px 10px 0 15px;
+    border-radius: 5px;
+    background-color: $brand-off-white;
+    &:hover {
+        background-color: $brand-gray-light;
+    }
+    &:before {
+        display: block;
+        content: '\f067';
+        color: $ui-dark-blue;
+        font-family: 'FontAwesome';
+        text-align: center;
+        line-height: 30px;
+        font-size: 1.7em;
+    }
+}

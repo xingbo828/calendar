@@ -1,0 +1,8 @@
+<div class="c-calendar-header">
+    <div class="c-calendar-header__month-switcher" ng-if="mode==='overview'">
+        <button type="button" ng-click="previousMonth()" class="c-calendar-header__month-switcher-action c--previous"></button>
+        <button type="button" ng-click="nextMonth()" class="c-calendar-header__month-switcher-action c--next"></button>
+    </div>
+    <div class="c-calendar-header__date">{{selectedDate.format('MMMM DD, YYYY')}}</div>
+    <button ng-if="mode==='detail'" type="button" ng-click="addEvent()" class="c-calendar-header__new-event-action"></button>
+</div>

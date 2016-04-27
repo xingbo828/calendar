@@ -1,0 +1,272 @@
+// Componenent
+
+// Modal
+// ---------
+
+.modal {
+	margin: 0 auto;
+	@include display(flex);
+	@include flex-flow(row wrap);
+
+	form {
+		@include flex(1 100%);
+	}
+
+}
+
+
+// Modal: Header
+// ---------
+
+.modal__header {
+	text-align: center;
+	flex: 1 100%;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		margin: 0 $gutter-width 20px;
+		font-size: 1.5rem;
+		line-height: 1.5;
+		color: white;
+		font-family: 'tthinregular';
+	}
+
+	p {
+		margin: 0 $gutter-width 20px;
+		font-size: 1rem;
+		line-height: 1.5;
+		color: white;
+		font-family: 'tlightregular';
+	}
+
+
+	// Modifiers
+
+	&.c--danger-zone {
+		h3 {
+			&:after {
+				display: inline-block;
+				font-family: 'FontAwesome';
+				content: '\f0fb';
+				margin-left: 8px;
+				@include transform(rotate(-45deg));
+			}
+		}
+	}
+}
+
+
+// Modal: Content
+// ---------
+
+.modal__content {
+	box-sizing: border-box;
+	background: white;
+	overflow: hidden;
+	padding: $gutter-width $gutter-width 15px;
+	@include flex(1 50%);
+
+	// Modifiers
+
+	&.c--is-collapsed {
+		padding: 0;
+		@include flex(0);
+	}
+}
+
+
+// Modal: Search
+// ----------
+
+.modal__search {
+	background: white;
+	border-right: 1px solid #e3e3e3;
+	overflow: hidden;
+	@include flex(1 50%);
+
+	form {
+		box-shadow: 0 2px 5px -2px #ddd;
+		@include display(flex);
+		@include flex(1 100%);
+	}
+}
+
+
+// Modal: Search List
+// ----------
+
+.modal__search-list {
+	border-top: 1px solid #e3e3e3;
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		list-style-type: none;
+		position: relative;
+		border-bottom: 1px solid #e3e3e3;
+		@include transition(.3s);
+
+		&:after {
+			position: absolute;
+			content: '';
+			display: block;
+			width: 4px;
+			right: -1px;
+			top: 0;
+			bottom: 0;
+			background: #e3e3e3;
+			opacity: 0;
+			@include transition(.3s);
+		}
+
+		&:hover:after {
+			opacity: 1;
+		}
+
+		// Modifiers
+
+		&.c--is-selected {
+			color: $ui-green;
+
+			&:after {
+				background: $ui-green;
+				opacity: 1;
+			}
+		}
+
+	}
+}
+
+
+// Modal: Search Node
+// ----------
+
+.modal__search-node {
+	cursor: pointer;
+	display: block;
+	padding: 0 $gutter-width-small;
+	line-height: 50px;
+	height: 50px;
+	text-decoration: none;
+	color: inherit;
+	font-size: .875rem;
+}
+
+
+
+// Modal: Search Input
+// ----------
+
+// TODO: fix importants.. gross..
+
+.modal__search-input {
+	flex: 1;
+	height: 50px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+	border: none !important;
+	width: auto !important;
+	align-self: flex-start;
+}
+
+
+// Modal: Search Button
+// ----------
+
+.modal__search-btn {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font-size: 1rem;
+	background: none;
+	color: #A4A4A4;
+	cursor: pointer;
+	@include appearance(none);
+	@include size(50px);
+
+	&:focus {
+		//TODO
+		outline: none;
+	}
+
+	&:before {
+		font-family: 'FontAwesome';
+		content: '\f002';
+	}
+}
+
+
+// Modal: Search Clear Button
+// ----------
+
+.modal__search-clear-btn {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font-size: 1.5rem;
+	background: none;
+	color: #A4A4A4;
+	cursor: pointer;
+	opacity: 1;
+	font-family: 'FontAwesome';
+	@include transition(.3s);
+	@include appearance(none);
+	@include size(50px);
+
+	&:focus {
+		//TODO
+		outline: none;
+	}
+
+	&:before {
+		content: '\00D7';
+	}
+
+	// Modifiers
+
+	&.c--is-hidden {
+		opacity: 0;
+	}
+
+	&.c--is-loading {
+		&:before {
+			display: block;
+			color: $ui-green;
+			content: '\f110';
+			@include animation(fontAwesomeSpinner .6s step-end infinite);
+		}
+	}
+}
+
+
+// Modal Search: Zero State
+// ----------
+
+.modal__search-zero-state {
+	text-align: center;
+	padding: $gutter-width-small;
+
+	p {
+		font-family: 'tlightregular';
+		font-size: 1rem;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+
+
+// Modal: Footer
+// ----------
+
+.modal__footer {
+	margin: 20px 0;
+	flex: 1 100%;
+}
